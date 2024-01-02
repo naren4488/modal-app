@@ -35,28 +35,24 @@ function App() {
       );
       return;
     }
-
     // console.log("submitted", userData);
     setIsModalOpen(!isModalOpen);
   };
 
   const handleClose = (e) => {
-    if (e.target.id === "wrapper-id" && isModalOpen) {
+    // console.log(e.target.id)
+    if (e.target.id === "main-page" && isModalOpen) {
       setIsModalOpen(!isModalOpen);
     }
   };
 
   return (
-    <div onClick={(e) => handleClose(e)} id="main-page" className="modal">
+    <div onClick={(e) => handleClose(e)} id="wrapper-id" className="wrapper">
       <h1>User Details Modal</h1>
       <button onClick={handleModalOpen}>Open Form</button>
 
       {isModalOpen && (
-        <div
-          onClick={(e) => handleClose(e)}
-          id="wrapper-id"
-          className="wrapper"
-        >
+        <div onClick={(e) => handleClose(e)} id="main-page" className="modal">
           <div id="modal-content-id" className="modal-content">
             <h1>Fill Details</h1>
             <form
@@ -101,7 +97,9 @@ function App() {
                 value={userData.dob}
                 onChange={(e) => hangleChange(e)}
               />
-              <button className="submit-button" type="submit">Submit</button>
+              <button className="submit-button" type="submit">
+                Submit
+              </button>
             </form>
           </div>
         </div>
