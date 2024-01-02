@@ -101,7 +101,7 @@ function App() {
                 value={userData.dob}
                 onChange={(e) => hangleChange(e)}
               />
-              <button type="submit">Submit</button>
+              <button className="submit-button" type="submit">Submit</button>
             </form>
           </div>
         </div>
